@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+
+.Bateau {
+  width: 40px;
+  height: 40px;
+  border:1px solid black; 
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+.Square{
+  width: 40px;
+  height: 40px;
+  border:1px solid black;
+}
+
+.autre {
+  border:1px solid yellow  !important;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(103, 173, 173);
+}
+
+.App {
+  max-width: 1024px;
+  margin: auto;
+  padding: 25px;
+  display: flex;
+
+  .Peintures {
+    flex:1;
+  }
+
+  .Board {
+    flex:2;
+  }
+}
+
+.AUTRES {
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
+}
+
+.essai {
+  background-image: url('./images/essai.jpg');
+  background-size: cover;
+}
+
+table {
+  font-family: arial, sans-serif;
+  background-image: url("./images/eau.jpg");
+  background-size: cover;
+  margin: auto;
+  width: 50% !important; 
+}
+
+.thead {
+  color: #fff;
+  background: #85C440;
+  border:2px solid white
+}
+
+.period-column {
+  background: #F58634;
+  color: #fff;
+  font-weight: bold;
+  border:2px solid white;
+}
+
+.listeBateau {
+  font-size: 1.5em;
+  list-style-type: none;
+
+  div {
+    background-color: #eee;
+    width: fit-content;
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+
+  div:hover {
+    background-color: #aaa;
+  }
+
+}
+/*
+ .croiseur {
+  background-image: url("./images/croiseur.jpg");
+  background-size: cover;
+}
+ 
+.porteavion {
+  background-image: url("./images/porteavion.jpg");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.sousmarin {
+  background-image: url("./images/sousmarin.jpg");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.torpilleur {
+  background-image: url("./images/torpilleur.jpg");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+*/
