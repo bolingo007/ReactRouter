@@ -12,6 +12,7 @@ const Menu = ({handleNavToggle}) => {
             <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/jeu">jeu Battleship</StyledLink>
             <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/accueil">accueil Page</StyledLink>
             <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/propos">À propos Page</StyledLink>
+            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/login">Connexion</StyledLink>
             <CloseToggle className="animate__animated animate__fadeInRight" onClick={handleNavToggle}><FaTimes/></CloseToggle>
         </StyledMenu>
     )
