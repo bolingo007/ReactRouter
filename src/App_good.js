@@ -13,9 +13,6 @@ import APropos from './pages/apropos.js';
 import Jeu from './pages/jeu.js';
 import Login from './pages/login.js';
 import {AuthContext} from './context/AuthContext.js';
-import {AuthContext2} from './context/AuthContext2.js';
-import Auth2 from './context/Auth.js';
-import {AuthContextJeu} from './context/AuthContextJeu.js';
 
 function App() {
   const [navToggled, setNavToggled] = useState(false);
@@ -25,13 +22,10 @@ function App() {
   }
 
   const [auth, setAuth] = useState({isAuth:false,token:null});
-  const [auth2, setAuth2] = useState({isAuth:false,token:null});
-  const [authJeu, setAuthJeu] = useState({isAuth:false,token:null});
 
   return (
     <AuthContext.Provider value={[auth, setAuth] }>
-      <AuthContextJeu.Provider value={[authJeu, setAuthJeu] }>
-      <AuthContext2.Provider value={[auth2, setAuth2] }>
+      {/* jeuContext */}
       <div className="App">
         <Toggle handleNavToggle={handleNavToggle}/>
         <BrowserRouter>
@@ -43,12 +37,9 @@ function App() {
             <Route path="/accueil" element={<Accueil />} /> 
             <Route path="/propos" element={<APropos />} /> 
             <Route path="/login" element={<Login />} /> 
-            <Route path="/Auth2" element={<Auth2/>} />
           </Routes>
         </BrowserRouter>
       </div>
-      </AuthContext2.Provider>
-      </AuthContextJeu.Provider>
     </AuthContext.Provider>
   );
 }

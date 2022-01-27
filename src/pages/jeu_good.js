@@ -30,7 +30,7 @@ function Bateau({bateauID,nombreCase,bateauImg,bateauImgDet}) {
   
   return (
     <tr>
-       <td colSpan={nombreCase} ref={outRef} style={{opacity, backgroundImage:bateauImg}} className={"Bateau"} onDragEnd={null}> </td>
+       <td colSpan={nombreCase} ref={outRef} style={{ opacity, backgroundImage:bateauImg}} className={"Bateau"} onDragEnd={null}> </td>
     </tr>
   )
 }
@@ -49,13 +49,13 @@ function Flotte({listeBateaux}) {
   );
 }
 
-function Square({position,onDrop,nombreCase,bateauImg,stateBateau,lieuBateau,bordure,bordureBateau}) {
+function Square({position,onDrop,nombreCase,bateauImg,stateBateau,lieuBateau}) {
 
   const [mesClasses, setClasses] = useState("Square");
   const [{ isOver, canDrop }, drop] = useDrop(
     () => ({
       accept: "BATEAU",
-      drop: (item) => onDrop(position, item,stateBateau,lieuBateau,bordureBateau),
+      drop: (item) => onDrop(position, item,stateBateau,lieuBateau),
       collect: (monitor) => ({
         isOver: !!monitor.isOver(),
         canDrop: !!monitor.canDrop(),
@@ -64,7 +64,7 @@ function Square({position,onDrop,nombreCase,bateauImg,stateBateau,lieuBateau,bor
 
   return (
     /* <td colSpan={nombreCase} className={mesClasses} onClick={()=> setClasses("Square essai")} style={{backgroundImage: isOver ? "url(./images/ondrop.jpg)" : bateauImg}} ref={drop}></td> */
-    <td colSpan={nombreCase} className={mesClasses} onClick={()=> setClasses("Square")} style={{borderStyle:bordure, backgroundImage: isOver ? "url(./images/ondrop.jpg)" : bateauImg}} ref={drop}>
+    <td colSpan={nombreCase} className={mesClasses} onClick={()=> setClasses("Square")} style={{backgroundImage: isOver ? "url(./images/ondrop.jpg)" : bateauImg}} ref={drop}>
 
     </td>
 
@@ -76,12 +76,10 @@ const size = 10;
 function MonBoard() {
   const [ stateBateaux, setCouleurs ] = useState(Array(size*size).fill(null));
   const [ lieuBateaux, setLieu ] = useState(Array(size*size).fill(null));
-  const [ bordureBateaux, setBordure ] = useState(Array(size*size).fill("1px solid rgb(71, 71, 133)"));
 
-  const DropItem = (position,item,stateBateau,lieuBateau,bordureBateau) => {
+  const DropItem = (position,item,stateBateau,lieuBateau) => {
     let newState = stateBateau.slice(0);
     let newLieu = lieuBateau;
-    let newBordure = bordureBateau;
     let choixBateau = false;
     
     if((position % 10) === 0){
@@ -113,18 +111,15 @@ function MonBoard() {
     if(choixBateau){
       for (let k = position; k < position + item.nombreCase; k++) {
         newState[k] = `url(${process.env.PUBLIC_URL + item.bateauImgDet[k - position]})`;
-        newBordure[k] = "none";
       }
       newLieu[position] = item.nombreCase;
       estDraggable[item.bateauID] = true;
     }
-    /* console.log(item);
+    //console.log(item);
     console.log(newState); 
-    console.log(newLieu); */
-   // console.log(newBordure);
+    console.log(newLieu);
     setCouleurs(newState);
     setLieu(newLieu);
-    setBordure(newBordure);
     //console.log(item.nombreCase);
     //console.log(item.bateauImgDet);
   }
@@ -147,7 +142,7 @@ function MonBoard() {
         id = x+(y*size);
         
         ligneSquare.push( <Square key={id} position={id} 
-          onDrop={ DropItem} bateauImg={stateBateaux[id]} stateBateau={stateBateaux} lieuBateau={lieuBateaux} bordureBateau={bordureBateaux} bordure={bordureBateaux[id]} />);        
+          onDrop={ DropItem} bateauImg={stateBateaux[id]} stateBateau={stateBateaux} lieuBateau={lieuBateaux}/>);        
       }
 
       const row = (<tr key={y+1002}><td key={y+1001} className="Bateau period-column">{colonne[y]}</td>{ligneSquare}</tr>);

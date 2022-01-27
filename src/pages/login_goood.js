@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div>
       <h2 style={errStyle}>Login page</h2>
-      <input type="text" value={username} onChange={(event) => onInputChange(event, setUsername)}  />
+      <input type="text" value={username} onChange={(event) => onInputChange(event, setUsername)} />
       <input type="password" value={password} onChange={(event) => onInputChange(event, setPassword)} />
       <button onClick={() => loginClick()} >Login</button>
     </div>

@@ -5,15 +5,15 @@ import { FaTimes } from 'react-icons/fa';
 
 const Menu = ({handleNavToggle}) => {
     return (
-        <StyledMenu>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/">Home</StyledLink>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/example">Example Page</StyledLink>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/contact">Contact Page</StyledLink>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/jeu">jeu Battleship</StyledLink>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/accueil">accueil Page</StyledLink>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/propos">À propos Page</StyledLink>
-            <StyledLink className="animate__animated animate__fadeInRight" onClick={handleNavToggle} to="/login">Connexion</StyledLink>
-            <CloseToggle className="animate__animated animate__fadeInRight" onClick={handleNavToggle}><FaTimes/></CloseToggle>
+         <StyledMenu>
+            <StyledLink onClick={handleNavToggle} to="/">Home</StyledLink>
+            <StyledLink onClick={handleNavToggle} to="/contact">Contact Page</StyledLink>
+            <StyledLink onClick={handleNavToggle} to="/jeu">jeu Battleship</StyledLink>
+            <StyledLink onClick={handleNavToggle} to="/accueil">accueil Page</StyledLink>
+            <StyledLink onClick={handleNavToggle} to="/propos">À propos Page</StyledLink>
+            <StyledLink onClick={handleNavToggle} to="/login">Connexion</StyledLink>
+            <StyledLink onClick={handleNavToggle} to="/Auth2">essai context</StyledLink>
+            <CloseToggle onClick={handleNavToggle}><FaTimes/></CloseToggle>
         </StyledMenu>
     )
 }
@@ -41,11 +41,6 @@ const StyledLink = styled(Link)`
     font-size: clamp(3rem, 4vw, 6vw);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     transition: .2s all ease-in-out;
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
     &:hover {
         transition: .2s all ease-in-out;
         color: orangered;

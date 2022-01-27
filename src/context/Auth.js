@@ -1,14 +1,13 @@
-import React from 'react';
-import { useContext } from 'react';
-import {AuthContext} from './AuthContext.js';
+import {React , useContext } from 'react';
+import {AuthContext2} from './AuthContext2.js';
 
 
-export default function Auth() {
-    const [valeurDuContext, setAuth] = useContext(AuthContext);
+export default function Auth2() {
+    const [valeurDuContext, setAuth2] = useContext(AuthContext2);
 
     let clickConnect = () => {
         console.log(valeurDuContext);
-        setAuth({isAuth:!valeurDuContext.isAuth});
+        setAuth2({isAuth:!valeurDuContext.isAuth});
     }
     
     return (

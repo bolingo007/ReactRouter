@@ -17,19 +17,19 @@ body {
 .Bateau {
   width: 40px;
   height: 40px;
-  border:1px solid black; 
+  border: 1px solid rgb(71, 71, 133);
   background-repeat: no-repeat;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
 
-.Square{
+.Square {
   width: 40px;
   height: 40px;
-  border:1px solid black;
+  border: 1px solid rgb(71, 71, 133);
 }
 
 .autre {
-  border:1px solid yellow  !important;
+  border: 1px solid yellow !important;
   width: 40px;
   height: 40px;
   background-color: rgb(103, 173, 173);
@@ -42,11 +42,11 @@ body {
   display: flex;
 
   .Peintures {
-    flex:1;
+    flex: 1;
   }
 
   .Board {
-    flex:2;
+    flex: 2;
   }
 }
 
@@ -66,20 +66,20 @@ table {
   background-image: url("./images/eau.jpg");
   background-size: cover;
   margin: auto;
-  width: 50% !important; 
+  width: 50% !important;
 }
 
 .thead {
   color: #fff;
   background: #85C440;
-  border:2px solid white
+  border: 2px solid white
 }
 
 .period-column {
   background: #F58634;
   color: #fff;
   font-weight: bold;
-  border:2px solid white;
+  border: 2px solid white;
 }
 
 .listeBateau {
@@ -98,6 +98,62 @@ table {
   }
 
 }
+
+.test {
+  // background-color: rgb(214, 135, 135);
+  width: 100%;
+  padding-top: 80px;
+  text-align: right;
+}
+
+.apropos {
+  background-color: rgb(112, 143, 168);
+  width: 50%;
+  padding-top: 10px;
+  padding-left: 50px;
+  text-align: left;
+  position: fixed;
+  left: 80;
+  bottom: 0;
+  color: white;
+}
+
+.affiche {
+  position: relative;
+  width: 60%;
+}
+
+.affiche:hover .image {
+  opacity: 0.3;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 10%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  float: left;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
 /*
  .croiseur {
   background-image: url("./images/croiseur.jpg");

@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import '../App.scss';
 import { useDrag, useDrop } from 'react-dnd'
 import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import {AuthContextJeu} from '../context/AuthContextJeu.js';
 
 let estDraggable = [];
 
@@ -60,6 +61,7 @@ function Square({position,onDrop,nombreCase,bateauImg,stateBateau,lieuBateau,bor
         isOver: !!monitor.isOver(),
         canDrop: !!monitor.canDrop(),
       })
+
     }),[stateBateau])
 
   return (
@@ -77,9 +79,19 @@ function MonBoard() {
   const [ stateBateaux, setCouleurs ] = useState(Array(size*size).fill(null));
   const [ lieuBateaux, setLieu ] = useState(Array(size*size).fill(null));
   const [ bordureBateaux, setBordure ] = useState(Array(size*size).fill("1px solid rgb(71, 71, 133)"));
+  const [authJeu, setAuthJeu] = useContext(AuthContextJeu);
 
+  /*  setAuthJeu({isAuth:true,MonBoard});*/
+    
   const DropItem = (position,item,stateBateau,lieuBateau,bordureBateau) => {
-    let newState = stateBateau.slice(0);
+    let newState;
+    console.log(authJeu);
+    if(Array.isArray(authJeu)){
+      newState = authJeu.slice(0);
+    } else {
+      newState = stateBateau.slice(0);
+    }
+    // let newState = stateBateau.slice(0);
     let newLieu = lieuBateau;
     let newBordure = bordureBateau;
     let choixBateau = false;
@@ -114,17 +126,23 @@ function MonBoard() {
       for (let k = position; k < position + item.nombreCase; k++) {
         newState[k] = `url(${process.env.PUBLIC_URL + item.bateauImgDet[k - position]})`;
         newBordure[k] = "none";
+        
       }
       newLieu[position] = item.nombreCase;
       estDraggable[item.bateauID] = true;
     }
-    /* console.log(item);
+    // console.log(item);
     console.log(newState); 
-    console.log(newLieu); */
+   /* console.log(newLieu); */
    // console.log(newBordure);
     setCouleurs(newState);
     setLieu(newLieu);
     setBordure(newBordure);
+    setAuthJeu(newState);
+    //setAuthJeu({isAuth:!newState.isAuth});
+    //setAuthJeu({isAuth:false,newState});
+    console.log("authJeu");
+    console.log(authJeu);
     //console.log(item.nombreCase);
     //console.log(item.bateauImgDet);
   }
@@ -146,8 +164,12 @@ function MonBoard() {
       for (let x = 0; x < size; x++) {
         id = x+(y*size);
         
+        // ligneSquare.push( <Square key={id} position={id} 
+        //   onDrop={ DropItem} bateauImg={authJeu[id]} stateBateau={authJeu} lieuBateau={lieuBateaux} bordureBateau={bordureBateaux} bordure={bordureBateaux[id]} />);
+        
         ligneSquare.push( <Square key={id} position={id} 
-          onDrop={ DropItem} bateauImg={stateBateaux[id]} stateBateau={stateBateaux} lieuBateau={lieuBateaux} bordureBateau={bordureBateaux} bordure={bordureBateaux[id]} />);        
+          onDrop={ DropItem} bateauImg={stateBateaux[id]} stateBateau={stateBateaux} lieuBateau={lieuBateaux} bordureBateau={bordureBateaux} bordure={bordureBateaux[id]} />);
+  
       }
 
       const row = (<tr key={y+1002}><td key={y+1001} className="Bateau period-column">{colonne[y]}</td>{ligneSquare}</tr>);
@@ -175,7 +197,7 @@ export default function App()  {
     {bateauID:4, nombreCase:3, bordure:"none", bateauImg:"./images/sousmarin.jpg", bateauImgDet:["./images/sousmarin1.jpg","./images/sousmarin2.jpg","./images/sousmarin3.jpg"]},
     {bateauID:5, nombreCase:2, bordure:"none", bateauImg:"./images/torpilleur.jpg", bateauImgDet:["./images/torpilleur1.jpg","./images/torpilleur2.jpg"]}
   ]);
-
+  
   return(
     <div className="container-fluid content-center table-responsive">
         <DndProvider backend={HTML5Backend}>

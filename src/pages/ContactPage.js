@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const ContactPage = () => {
     return (
         <StyledContactPage>
-            <Heading className="animate__animated animate__fadeInLeft">Contact Page</Heading>
+            <Heading>Contact Page</Heading>
             <Content>
-            <h1>👋 Hey there </h1>
-            <p>Like the demo? Let me know on <a href="https://www.twitter.com/hyggedev">Twitter! </a></p>
+                <h1>👋 Allo! </h1>
+                <p>Mon association <a href="http://www.le-septentrion.ca">Le Septentrion</a></p>
             </Content>
         </StyledContactPage>
     )
@@ -29,11 +29,6 @@ const Heading = styled.h1`
     font-weight: 700;
     margin: 0;
     padding: 0;
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
 `;
 
 const Content = styled.div`

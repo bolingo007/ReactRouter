@@ -6,7 +6,7 @@ import { FaShip } from 'react-icons/fa';
 
 const Toggle = ({handleNavToggle}) => {
     return (
-        <StyledToggle className="animate__animated animate__fadeInRight" onClick={handleNavToggle}>
+        <StyledToggle onClick={handleNavToggle}>
             {/* <FaBars/> */}
             <FaShip/>
         </StyledToggle>
@@ -19,7 +19,7 @@ const StyledToggle = styled.button`
     right: 4%;
     color: #222;
     background: #fde;
-    padding: .75rem;
+    padding: .95rem;
     display: flex;
     place-items: center;
     font-size: 2rem;
