@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const ContactPage = () => {
     return (
         <StyledContactPage>
-            <Heading>Contact Page</Heading>
+            <Heading>La vraie bataille navale se passe ici</Heading>
             <Content>
-                <h1>👋 Allo! </h1>
-                <p>Mon association <a href="http://www.le-septentrion.ca">Le Septentrion</a></p>
+                <h1>&#128075;&#127999; Allo! &#128512;</h1>
+                <p>Moi c'est Bertin Mouya Madi</p>
+                <p>Mon association est <a href="http://www.le-septentrion.ca">Le Septentrion</a></p>
             </Content>
         </StyledContactPage>
     )
@@ -24,9 +25,9 @@ const StyledContactPage = styled.div`
 `;
 
 const Heading = styled.h1`
-    font-size: clamp(3rem, 5vw, 7vw);
+    font-size: clamp(1rem, 2vw, 7vw);
     color: #eee;
-    font-weight: 700;
+    font-weight: 70;
     margin: 0;
     padding: 0;
 `;

@@ -36,14 +36,12 @@ function App() {
         <Toggle handleNavToggle={handleNavToggle}/>
         <BrowserRouter>
         { navToggled ? <Menu handleNavToggle={handleNavToggle} /> : null }
-          <Routes>
+        <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/contact" element={<ContactPage />} />
             <Route path="/jeu" element={<Jeu />} /> 
-            <Route path="/accueil" element={<Accueil />} /> 
             <Route path="/propos" element={<APropos />} /> 
             <Route path="/login" element={<Login />} /> 
-            <Route path="/Auth2" element={<Auth2/>} />
           </Routes>
         </BrowserRouter>
       </div>

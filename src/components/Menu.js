@@ -9,10 +9,8 @@ const Menu = ({handleNavToggle}) => {
             <StyledLink onClick={handleNavToggle} to="/">Home</StyledLink>
             <StyledLink onClick={handleNavToggle} to="/contact">Contact Page</StyledLink>
             <StyledLink onClick={handleNavToggle} to="/jeu">jeu Battleship</StyledLink>
-            <StyledLink onClick={handleNavToggle} to="/accueil">accueil Page</StyledLink>
             <StyledLink onClick={handleNavToggle} to="/propos">À propos Page</StyledLink>
             <StyledLink onClick={handleNavToggle} to="/login">Connexion</StyledLink>
-            <StyledLink onClick={handleNavToggle} to="/Auth2">essai context</StyledLink>
             <CloseToggle onClick={handleNavToggle}><FaTimes/></CloseToggle>
         </StyledMenu>
     )

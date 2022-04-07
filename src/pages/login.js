@@ -26,9 +26,9 @@ export default function Login() {
     setStateFct(event.target.value);
   }
 
-  return (
+ return (
     <div>
-      <h2 style={errStyle}>Login page</h2>
+      <h2 style={errStyle}>Connexion</h2>
       <input type="text" value={username} onChange={(event) => onInputChange(event, setUsername)}  />
       <input type="password" value={password} onChange={(event) => onInputChange(event, setPassword)} />
       <button onClick={() => loginClick()} >Login</button>
@@ -36,16 +36,3 @@ export default function Login() {
   )
   
 }
-/* function Login() {
-  const [auth, setAuth] = useState({isAuth:false,token:null});
-
-  return (
-    <AuthContext.Provider value={[auth, setAuth] }>
-      <div className="App">
-        <Auth/>
-      </div>
-    </AuthContext.Provider>
-  );
-}
-
-export default Login; */

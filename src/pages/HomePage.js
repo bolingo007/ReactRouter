@@ -6,6 +6,15 @@ const HomePage = () => {
         <div className="test">
         <StyledHomePage>
             <Heading className="animate__animated animate__fadeInLeft"><div>Battleship</div></Heading>
+            <div>
+            <h1>Bataille navale</h1>
+            <p>Ce jeu n'est pas encore terminé. </p>
+            <p>Il faut faire un contexte de jeu qui marche bien. </p>
+            <p>Il faut ajouter des sockets pour permettre à deux personnes de jouer. </p>
+            <p>C'est un projet intéressant que je terminerai pendant mes vacances.</p>
+            <p>Je travaillerai dessus de temps en temps pour ajouter les parties manquantes</p>
+            <p>Pour le moment &#128704;&#127999;</p>
+             </div>
             
         </StyledHomePage>
         </div>
