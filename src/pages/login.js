@@ -1,3 +1,4 @@
+import React from 'react';
 import {AuthContext} from '../context/AuthContext.js';
 import { useState, useContext } from 'react';
 import axios from 'axios';
